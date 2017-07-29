@@ -1,4 +1,6 @@
-import lexer.Lexer;
+package de.hamburg.PJ;
+
+import de.hamburg.PJ.lexer.PJLexer;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -9,7 +11,7 @@ public final class PJScript {
     public static void main(String[] args) {
         try {
             String input = String.join("\n", Files.readAllLines(Paths.get(path)));
-            new Lexer(input).lex();
+            new PJLexer(input).lex();
         } catch (IOException e) {
             System.err.println("File not found: " + e);
         }

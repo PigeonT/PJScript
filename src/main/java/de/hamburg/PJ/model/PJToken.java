@@ -1,16 +1,16 @@
-public enum Token {
-    VAR(0),
+package de.hamburg.PJ.model;
+
+public enum PJToken {
+    STRING(0),
     IDENTIFIER(1),
-    EQUAL(2),
-    FUNC(3),
-    LBRACE(4),
-    RBRACE(5),
-    LBRACKET(6),
-    RBRACKET(7),
-    SEMICOLON(8);
+    FUNC(2),
+    LBRACE(3),
+    RBRACE(4),
+    LBRACKET(5),
+    RBRACKET(6);
 
     private final int id;
-    Token(int id) {
+    PJToken(int id) {
         this.id = id;
     }
 
