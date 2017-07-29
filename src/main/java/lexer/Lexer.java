@@ -1,7 +1,6 @@
 package lexer;
 
 import java.io.IOException;
-import java.util.Scanner;
 
 public final class Lexer {
     private final String input;
