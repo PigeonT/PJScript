@@ -1,8 +1,6 @@
 package de.hamburg.PJ.lexer;
 
-import de.hamburg.PJ.model.PJModel;
-import de.hamburg.PJ.model.PJString;
-import de.hamburg.PJ.model.PJToken;
+import de.hamburg.PJ.model.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -22,21 +20,17 @@ public final class PJLexer {
     public void lex() throws IOException {
         while(index <= arr.length - 1) {
             switch(arr[index]) {
-                case '\n':
-                case ' ': {
+                case '+':
+                    getPlusSign();
                     index++;
-                    continue;
-                }
-                case '\"':
-                    stringToken();
                     break;
-                case '{':
-                    LBlockToken();
-                case '}':
-                    RBlockToken();
+                case '-': {
+                    getMinusSign();
+                    index++;
+                    break;
+                }
                 default:
-                    System.out.print(arr[index] + " ");
-                    System.out.println(index);
+                    getDigit();
                     index++;
             }
 
@@ -46,26 +40,17 @@ public final class PJLexer {
         }
     }
 
-    private void RBlockToken() {
-        //todo
-
+    private void getDigit() {
+        System.out.println("index is: " + index);
+        tokens.add(new PJNumer((int) arr[index]));
     }
 
-    private void LBlockToken() {
-        //todo
-
+    private void getPlusSign() {
+        tokens.add(new PJPlus(PJToken.PLUS));
     }
 
-    private void stringToken() {
-        index++;
-        char c;
-        StringBuilder sb = new StringBuilder();
-        while((c = arr[index]) != '\"') {
-            sb.append(c);
-            index++;
-        }
-        tokens.add(new PJString(PJToken.STRING, sb.toString()));
-        index++;
+    private void getMinusSign() {
+        tokens.add(new PJMinus(PJToken.MINUS));
     }
 
 }
