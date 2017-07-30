@@ -1,6 +1,6 @@
 package de.hamburg.PJ.lexer;
 
-import de.hamburg.PJ.model.*;
+import de.hamburg.PJ.token.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,14 +10,14 @@ public final class PJLexer {
     private final String input;
     private final char[] arr;
     private int index = 0;
-    private List<PJModel> tokens = new ArrayList<>();
+    private List<PJToken> tokens = new ArrayList<>();
 
     public PJLexer(String input) {
         this.input = input;
         arr = this.input.toCharArray();
     }
 
-    public List<PJModel> lex() throws IOException {
+    public List<PJToken> lex() throws IOException {
         while(index <= arr.length - 1) {
             switch(arr[index]) {
                 case '+':
@@ -38,7 +38,7 @@ public final class PJLexer {
         return tokens;
     }
 
-    public List<PJModel> getTokens() {
+    public List<PJToken> getTokens() {
         return this.tokens;
     }
 
@@ -47,11 +47,11 @@ public final class PJLexer {
     }
 
     private void getPlusSign() {
-        tokens.add(new PJPlus(PJToken.PLUS));
+        tokens.add(new PJPlus(PJTokenType.PLUS));
     }
 
     private void getMinusSign() {
-        tokens.add(new PJMinus(PJToken.MINUS));
+        tokens.add(new PJMinus(PJTokenType.MINUS));
     }
 
 }

@@ -1,7 +1,7 @@
 package de.hamburg.PJ;
 
 import de.hamburg.PJ.lexer.PJLexer;
-import de.hamburg.PJ.model.PJModel;
+import de.hamburg.PJ.token.PJToken;
 import de.hamburg.PJ.parser.PJParser;
 
 import java.io.IOException;
@@ -14,7 +14,7 @@ public final class PJScript {
     public static void main(String[] args) {
         try {
             String input = String.join("\n", Files.readAllLines(Paths.get(path)));
-            List<PJModel> tokens = new PJLexer(input).lex();
+            List<PJToken> tokens = new PJLexer(input).lex();
             new PJParser().ast(tokens);
         } catch (IOException e) {
             System.err.println("File not found: " + e);

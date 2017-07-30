@@ -1,9 +1,9 @@
-package de.hamburg.PJ.model;
+package de.hamburg.PJ.token;
 
-public class PJNumer implements PJModel{
+public class PJNumer implements PJToken {
 
     private final int value;
-    private final PJToken token = PJToken.NUM;
+    private final PJTokenType token = PJTokenType.NUM;
 
     public PJNumer(int n) {
         this.value = n;
@@ -12,7 +12,7 @@ public class PJNumer implements PJModel{
         return value;
     }
 
-    public PJToken getToken() {
+    public PJTokenType getToken() {
         return token;
     }
 

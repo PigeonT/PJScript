@@ -1,12 +1,12 @@
-package de.hamburg.PJ.model;
+package de.hamburg.PJ.token;
 
-public enum PJToken {
+public enum PJTokenType {
     NUM(0),
     MINUS(1),
     PLUS(2);
 
     private final int id;
-    PJToken(int id) {
+    PJTokenType(int id) {
         this.id = id;
     }
 

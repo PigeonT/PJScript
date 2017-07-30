@@ -1,9 +1,9 @@
-package de.hamburg.PJ.model;
+package de.hamburg.PJ.token;
 
-public class PJPlus implements PJModel{
-    private final PJToken token;
+public class PJPlus implements PJToken {
+    private final PJTokenType token;
 
-    public PJPlus(PJToken t) {
+    public PJPlus(PJTokenType t) {
         this.token = t;
     }
 
