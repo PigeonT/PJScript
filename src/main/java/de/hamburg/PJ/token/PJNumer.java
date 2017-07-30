@@ -1,6 +1,8 @@
 package de.hamburg.PJ.token;
 
-public class PJNumer extends PJToken {
+import de.hamburg.PJ.visitor.PJVisitor;
+
+public class PJNumer extends PJToken<PJVisitor> {
 
     private final int value;
     private final PJTokenType token = PJTokenType.NUM;

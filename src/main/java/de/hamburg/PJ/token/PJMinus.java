@@ -1,6 +1,8 @@
 package de.hamburg.PJ.token;
 
-public class PJMinus extends PJToken {
+import de.hamburg.PJ.visitor.PJVisitor;
+
+public class PJMinus extends PJToken<PJVisitor> {
 
     public PJMinus(PJTokenType t) {
         super(t);

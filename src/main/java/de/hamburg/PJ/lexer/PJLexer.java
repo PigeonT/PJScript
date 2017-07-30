@@ -1,6 +1,7 @@
 package de.hamburg.PJ.lexer;
 
 import de.hamburg.PJ.token.*;
+import de.hamburg.PJ.visitor.PJVisitor;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,14 +11,14 @@ public final class PJLexer {
     private final String input;
     private final char[] arr;
     private int index = 0;
-    private List<PJToken> tokens = new ArrayList<>();
+    private List<PJToken<PJVisitor>> tokens = new ArrayList<>();
 
     public PJLexer(String input) {
         this.input = input;
         arr = this.input.toCharArray();
     }
 
-    public List<PJToken> lex() throws IOException {
+    public List<PJToken<PJVisitor>> lex() throws IOException {
         while(index <= arr.length - 1) {
             switch(arr[index]) {
                 case '+':

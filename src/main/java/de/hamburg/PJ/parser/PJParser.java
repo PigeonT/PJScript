@@ -1,23 +1,24 @@
 package de.hamburg.PJ.parser;
 
-import de.hamburg.PJ.expression.OperandExpression;
-import de.hamburg.PJ.expression.OperatorExpression;
 import de.hamburg.PJ.token.PJToken;
+import de.hamburg.PJ.token.PJTokenType;
+import de.hamburg.PJ.visitor.PJVisitor;
 
 import java.util.List;
+import java.util.Stack;
 
 public final class PJParser {
-    public void ast(List<PJToken> tokens) {
-        for(PJToken m : tokens) {
+    private Stack<PJToken<PJVisitor>> stack = new Stack<>();
+
+    public void ast(List<PJToken<PJVisitor>> tokens) {
+        for(PJToken<PJVisitor> m : tokens) {
             switch(m.getTokenType()) {
                 case NUM:
-                    parseNumber();
+                    parseNumber(m);
                     break;
                 case PLUS:
-                    parsePlusSign();
-                    break;
                 case MINUS:
-                    parseMinusSign();
+                    parseOperator(m);
                     break;
                 default:
                     throw new RuntimeException("Not Valid Token Found, check yoru BNF grammer");
@@ -25,15 +26,14 @@ public final class PJParser {
         }
     }
 
-    private void parseMinusSign() {
-
+    private void parseOperator(PJToken<PJVisitor> m) {
+        PJToken<PJVisitor> t = stack.peek();
+        if(t.getTokenType().equals(PJTokenType.NUM)) {
+            //todo
+        }
     }
 
-    private void parsePlusSign() {
-
-    }
-
-    private void parseNumber() {
-
+    private void parseNumber(PJToken<PJVisitor> m) {
+        stack.push(m);
     }
 }
