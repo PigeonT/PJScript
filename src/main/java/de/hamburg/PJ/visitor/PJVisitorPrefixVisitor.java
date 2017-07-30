@@ -4,9 +4,6 @@ import de.hamburg.PJ.expression.Expression;
 import de.hamburg.PJ.expression.ExpressionImp;
 import de.hamburg.PJ.expression.OperandExpression;
 import de.hamburg.PJ.expression.OperatorExpression;
-import de.hamburg.PJ.token.PJMinus;
-import de.hamburg.PJ.token.PJNumer;
-import de.hamburg.PJ.token.PJPlus;
 
 public final class PJVisitorPrefixVisitor implements PJVisitor {
     @Override
@@ -18,7 +15,7 @@ public final class PJVisitorPrefixVisitor implements PJVisitor {
     }
 
     private void visitOperatorExpression() {
-        
+
     }
 
     private void visitOperandExpression() {

@@ -38,10 +38,6 @@ public final class PJLexer {
         return tokens;
     }
 
-    public List<PJToken> getTokens() {
-        return this.tokens;
-    }
-
     private void getDigit() {
         tokens.add(new PJNumer(Character.getNumericValue(arr[index])));
     }

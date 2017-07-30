@@ -3,6 +3,7 @@ package de.hamburg.PJ;
 import de.hamburg.PJ.lexer.PJLexer;
 import de.hamburg.PJ.token.PJToken;
 import de.hamburg.PJ.parser.PJParser;
+import de.hamburg.PJ.token.PJTokenType;
 
 import java.io.IOException;
 import java.nio.file.Files;

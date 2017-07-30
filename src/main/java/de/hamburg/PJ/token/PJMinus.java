@@ -1,16 +1,15 @@
 package de.hamburg.PJ.token;
 
-public class PJMinus implements PJToken {
-    private final PJTokenType token;
+public class PJMinus extends PJToken {
 
     public PJMinus(PJTokenType t) {
-        this.token = t;
+        super(t);
     }
 
     @Override
     public String toString() {
         return "PJMinus{" +
-                "token=" + token.name() +
+                "tokenType=" + tokenType.name() +
                 '}';
     }
 }
