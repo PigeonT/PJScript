@@ -5,7 +5,9 @@ import de.hamburg.PJ.expression.Expression;
 import de.hamburg.PJ.lexer.PJLexer;
 import de.hamburg.PJ.parser.PJParser;
 import de.hamburg.PJ.token.PJToken;
+import de.hamburg.PJ.visitor.AbstractPJVisitor;
 import de.hamburg.PJ.visitor.PJVisitor;
+import de.hamburg.PJ.visitor.PJVisitorPrefixVisitor;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -19,10 +21,11 @@ public final class PJScript {
             String input = String.join("\n", Files.readAllLines(Paths.get(path)));
             List<PJToken<PJVisitor>> tokens = new PJLexer(input).lex();
             Expression<PJVisitor> ast = new PJParser().ast(tokens);
+            AbstractPJVisitor visitor = new PJVisitorPrefixVisitor(ast);
 
-//            //test ast
-//            String astString = ast.toString();;
-//            System.out.println(astString);
+            //for test
+            visitor.eval();
+
         } catch (IOException e) {
             System.err.println("File not found: " + e);
         }

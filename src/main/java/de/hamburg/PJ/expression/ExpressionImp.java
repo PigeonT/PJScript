@@ -2,7 +2,7 @@ package de.hamburg.PJ.expression;
 
 import de.hamburg.PJ.visitor.PJVisitor;
 
-public class ExpressionImp extends Expression<PJVisitor>{
+public final class ExpressionImp extends Expression<PJVisitor>{
     private final Expression<PJVisitor> lop;
     private final Expression<PJVisitor> rop;
     private final OperatorExpression signToken;
