@@ -1,0 +1,12 @@
+# IR Instruction
+
+## NUM
+*PUSH NUM*
+
+## PLUS
+*PUSH PLUS*
+
+## MINUS
+*PUSH MINUS*
+
+
