@@ -3,7 +3,8 @@ package de.hamburg.PJ.token;
 public enum PJTokenType {
     NUM(0),
     MINUS(1),
-    PLUS(2);
+    PLUS(2),
+    EXP(3);
 
     private final int id;
     PJTokenType(int id) {

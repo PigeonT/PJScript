@@ -8,21 +8,21 @@ import de.hamburg.PJ.expression.OperatorExpression;
 public final class PJVisitorPrefixVisitor implements PJVisitor {
     @Override
     public void visit(Expression exp) {
-        if(exp instanceof ExpressionImp) visitExpressionImp();
-        else if(exp instanceof OperatorExpression) visitOperatorExpression();
-        else if(exp instanceof OperandExpression) visitOperandExpression();
+        if(exp instanceof ExpressionImp) visitExpressionImp(exp);
+        else if(exp instanceof OperatorExpression) visitOperatorExpression(exp);
+        else if(exp instanceof OperandExpression) visitOperandExpression(exp);
         else throw new RuntimeException("Can't evaluate AST correctly, check visitor visit() for more detauls");
     }
 
-    private void visitOperatorExpression() {
+    private void visitOperatorExpression(Expression exp) {
 
     }
 
-    private void visitOperandExpression() {
+    private void visitOperandExpression(Expression exp) {
 
     }
 
-    private void visitExpressionImp() {
+    private void visitExpressionImp(Expression exp) {
 
     }
 }
