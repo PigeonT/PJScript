@@ -5,7 +5,6 @@ import de.hamburg.PJ.expression.Expression;
 import de.hamburg.PJ.lexer.PJLexer;
 import de.hamburg.PJ.parser.PJParser;
 import de.hamburg.PJ.token.PJToken;
-import de.hamburg.PJ.visitor.AbstractPJVisitor;
 import de.hamburg.PJ.visitor.PJVisitor;
 import de.hamburg.PJ.visitor.PJVisitorPrefixVisitor;
 

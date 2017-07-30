@@ -1,12 +1,9 @@
 # IR Instruction
 
-## NUM
-*PUSH NUM*
-
-## PLUS
-*PUSH PLUS*
-
-## MINUS
-*PUSH MINUS*
+PUSH
+POP
+ADD
+MINUS
+EOF
 
 

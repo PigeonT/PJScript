@@ -8,19 +8,19 @@ import de.hamburg.PJ.expression.OperatorExpression;
 import java.util.Stack;
 
 public abstract class AbstractPJVisitor implements PJVisitor{
-    protected Stack<String> IR;
+    protected Stack<Integer> IR = new Stack<>();
 
     @Override
     public void visit(Expression<PJVisitor> exp) {
-        if (exp instanceof ExpressionImp) visitExpression(exp);
-        else if (exp instanceof OperatorExpression) visitOperatorExpression(exp);
-        else if (exp instanceof OperandExpression) visitOperandExpression(exp);
+        if (exp instanceof ExpressionImp) visitExpression((ExpressionImp) exp);
+        else if (exp instanceof OperatorExpression) visitOperatorExpression((OperatorExpression) exp);
+        else if (exp instanceof OperandExpression) visitOperandExpression((OperandExpression) exp);
         else throw new RuntimeException("Can't evaluate AST correctly, check visitor visit() for more detauls");
     }
 
-    protected abstract void visitExpression(Expression<PJVisitor> exp);
-    protected abstract void visitOperatorExpression(Expression<PJVisitor> exp);
-    protected abstract void visitOperandExpression(Expression<PJVisitor> exp);
+    protected abstract void visitExpression(ExpressionImp exp);
+    protected abstract void visitOperatorExpression(OperatorExpression exp);
+    protected abstract void visitOperandExpression(OperandExpression exp);
 
     @Override
     public String toString() {
