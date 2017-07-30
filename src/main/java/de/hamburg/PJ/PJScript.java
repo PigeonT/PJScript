@@ -21,9 +21,8 @@ public final class PJScript {
             String input = String.join("\n", Files.readAllLines(Paths.get(path)));
             List<PJToken<PJVisitor>> tokens = new PJLexer(input).lex();
             Expression<PJVisitor> ast = new PJParser().ast(tokens);
-            AbstractPJVisitor visitor = new PJVisitorPrefixVisitor(ast);
-
-            //for test
+            PJVisitor visitor = new PJVisitorPrefixVisitor();
+            visitor.visit(ast);
             visitor.eval();
 
         } catch (IOException e) {

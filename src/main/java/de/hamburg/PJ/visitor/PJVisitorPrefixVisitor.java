@@ -4,12 +4,10 @@ import de.hamburg.PJ.expression.Expression;
 
 public final class PJVisitorPrefixVisitor extends AbstractPJVisitor {
 
-    public PJVisitorPrefixVisitor(Expression<PJVisitor> ast) {
-        super(ast);
-    }
+    public PJVisitorPrefixVisitor(){}
 
     @Override
-    protected void visitExpressionImp(Expression<PJVisitor> exp) {
+    protected void visitExpression(Expression<PJVisitor> exp) {
 
     }
 
@@ -20,11 +18,6 @@ public final class PJVisitorPrefixVisitor extends AbstractPJVisitor {
 
     @Override
     protected void visitOperandExpression(Expression<PJVisitor> exp) {
-
-    }
-
-    @Override
-    protected void generateIR() {
 
     }
 
