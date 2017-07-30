@@ -20,7 +20,7 @@ public class PJNumer implements PJModel{
     public String toString() {
         return "PJNumer{" +
                 "value=" + value +
-                ", token=" + token +
+                ", token=" + token.name() +
                 '}';
     }
 }

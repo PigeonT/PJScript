@@ -17,7 +17,7 @@ public final class PJLexer {
         arr = this.input.toCharArray();
     }
 
-    public void lex() throws IOException {
+    public List<PJModel> lex() throws IOException {
         while(index <= arr.length - 1) {
             switch(arr[index]) {
                 case '+':
@@ -35,14 +35,15 @@ public final class PJLexer {
             }
 
         }
-        for(PJModel j : tokens) {
-            System.out.println(j);
-        }
+        return tokens;
+    }
+
+    public List<PJModel> getTokens() {
+        return this.tokens;
     }
 
     private void getDigit() {
-        System.out.println("index is: " + index);
-        tokens.add(new PJNumer((int) arr[index]));
+        tokens.add(new PJNumer(Character.getNumericValue(arr[index])));
     }
 
     private void getPlusSign() {

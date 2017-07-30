@@ -10,7 +10,7 @@ public class PJPlus implements PJModel{
     @Override
     public String toString() {
         return "PJPlus{" +
-                "token=" + token +
+                "token=" + token.name() +
                 '}';
     }
 }
