@@ -8,4 +8,5 @@ public abstract class Expression<V extends PJVisitor> {
     void accept(V v) {
         v.visit((Expression<PJVisitor>) this);
     };
+
 }

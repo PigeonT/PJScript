@@ -7,6 +7,7 @@ import de.hamburg.PJ.parser.PJParser;
 import de.hamburg.PJ.token.PJToken;
 import de.hamburg.PJ.visitor.PJVisitor;
 import de.hamburg.PJ.visitor.PJVisitorPrefixVisitor;
+import de.hamburg.PJ.vm.PJPrefixVisitorVM;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -22,7 +23,7 @@ public final class PJScript {
             Expression<PJVisitor> ast = new PJParser().ast(tokens);
             PJVisitor visitor = new PJVisitorPrefixVisitor();
             visitor.visit(ast);
-            visitor.eval();
+            visitor.eval(new PJPrefixVisitorVM());
 
         } catch (IOException e) {
             System.err.println("File not found: " + e);

@@ -15,4 +15,7 @@ public final class OperatorExpression extends Expression<PJVisitor> {
                 "signToken=" + signToken +
                 '}';
     }
+    public PJToken<PJVisitor> getToken() {
+        return signToken;
+    }
 }
