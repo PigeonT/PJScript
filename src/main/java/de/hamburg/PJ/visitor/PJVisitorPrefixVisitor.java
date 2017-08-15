@@ -23,8 +23,8 @@ public final class PJVisitorPrefixVisitor extends AbstractPJVisitor {
         //TODO handle pending stack to build prefix virtual machine directives
         pending.push(exp);
         if(exp.LHIsOperator()) super.visit(exp.getLop());
-        if(exp.hasRH()) super.visit(exp.getRop());
-     }
+        if(exp.RHIsOperator()) super.visit(exp.getRop());
+    }
 
     protected void visitOperatorExpression(OperatorExpression exp) {
         if(isMinusSign(exp)) irStack.push(MINUS);

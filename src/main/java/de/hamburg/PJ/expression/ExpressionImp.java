@@ -23,6 +23,9 @@ public final class ExpressionImp extends Expression<PJVisitor>{
     public boolean LHIsOperator() {
         return !(lop instanceof OperandExpression);
     }
+    public boolean RHIsOperator() {
+        return !(rop instanceof OperandExpression);
+    }
     @Override
     public String toString() {
         return String.format("lop: %s\n operator: %s\n rop: %s\n",
